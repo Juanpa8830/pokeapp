@@ -10,13 +10,55 @@ body {
 	color: #1d1d1d;
 }
 
+header {
+    display: flex;  
+    border: 2px solid blue;
+    height: 100px;
+    border: 2px solid rgb(20, 5, 80);
+    background-color: rgb(193, 185, 229);
+}
+
+.pokelogo {
+    height: 80px;
+    margin-top: 0.5%;
+    margin-left: 5%;
+}
+
+.menu {
+    display: flex;
+    padding-top: 3%;
+    list-style:none;
+    padding-top: 2.5%;
+    font-size: 25px;
+    margin-left: 5%;
+    gap: 90px;
+}
+
+.menu li {
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.menu li:hover {
+    text-decoration: underline;
+}
+
 #pokeList {
-	width: 90%;
-	max-width: 1000px;
-	margin: 40px auto 100px auto;
-	display: grid;
-	grid-template-columns: repeat(4, 4fr);
-	gap: 40px;
+	display: grid; 
+  grid-template-columns: 1fr 1fr 1fr 1fr; 
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr; 
+  gap: 4% 2%; 
+  grid-template-areas: 
+    ". . . ."
+    ". . . ."
+    ". . . ."
+    ". . . ."
+    ". . . ."
+    ". . . ."; 
+  justify-items: stretch; 
+  align-items: stretch; 
+  width: 80%; 
+  height: 74%; 
+  margin: 5% 5% 27% 15%;
+
 }
 
 #pokecard {
@@ -24,9 +66,34 @@ body {
     flex-direction: column;
 }
 
-#image {
-    width: 100px;
-    height: 100px;
+#image { 
+    width: 200px;
+    height: 150px;
 }
 
+#comments { 
+    width: 200px;
+    height: 30px;
+}
+#reserve { 
+    width: 200px;
+    height: 30px;
+    margin-top: 2%;
+}
 
+.footer {
+    border: 2px solid gray;
+    height:  100px;
+    margin-top: 5%;
+    border: 2px solid rgb(20, 5, 80);
+    background-color: rgb(193, 185, 229);
+    
+}
+
+.footer p {
+    padding-top: 2.5%;
+    font-size: 25px;
+    margin-left: 5%;
+
+    
+}
