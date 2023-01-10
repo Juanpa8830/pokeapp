@@ -71,11 +71,18 @@ header {
     height: 150px;
 }
 
-#comments { 
+.likes { 
     width: 200px;
     height: 30px;
 }
-#reserve { 
+
+.comments {
+    margin-top: 2%;
+    width: 200px;
+    height: 30px;
+}
+
+.reserve { 
     width: 200px;
     height: 30px;
     margin-top: 2%;
@@ -94,6 +101,50 @@ header {
     padding-top: 2.5%;
     font-size: 25px;
     margin-left: 5%;
+}
 
-    
+.modal {
+  position: fixed;
+  z-index: 1;
+  justify-content: center;
+  left: 0;
+  bottom: 0;
+  top: 0;
+  width: 100%;
+  height: auto;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  overflow-y: scroll;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  border: 1px solid #888;
+  width: 80%;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-preview-header {
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.close {
+  color: #aaa;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
 }
