@@ -1,6 +1,9 @@
 import PokemonData from './pokemondata.js';
 import pokedexPopup from './pokedexPopup.js';
 import { getAllLikes } from './likeCounter.js';
+import InvolvementAPI from './involvementAPI.js';
+
+var count = 0;
 
 let allLikes = [];
 async function readAllLikes() {
@@ -39,8 +42,35 @@ export default async function start() {
   const allCommentButtons = document.querySelectorAll('.comments');
   allCommentButtons.forEach((element) => {
     element.addEventListener('click', async () => {
-      const { id } = element;
-      pokedexPopup(id);
+      const id = element.id;
+      await pokedexPopup(id);
+      const commentContainer = document.querySelector('.comments-container');
+      const username = document.querySelector('.username');
+      const comment = document.querySelector('.comment-text');
+      const form = document.querySelector('form');
+      const heading = document.querySelector('.comment-heading');
+      form.addEventListener('submit', async (event) => {
+        event.preventDefault();
+        const data = await InvolvementAPI.postComment(id, username.value, comment.value);
+        if (data === 201) {
+          count += 1;
+        }
+        const currentDate = new Date();
+        const year = currentDate.getFullYear();
+        const month = currentDate.getMonth() + 1; // January is 0
+        const day = currentDate.getDate();
+
+        const dateString = `${year}-${month}-${day}`;
+
+        const commentOnDom = document.createElement('h3');
+        commentOnDom.innerHTML = `
+        ${username.value} : ${comment.value} (${dateString})
+        `;
+        username.value = '';
+        comment.value = '';
+        commentContainer.appendChild(commentOnDom);
+        heading.innerHTML = `Comments (${count})`;
+      });
     });
   });
 }
