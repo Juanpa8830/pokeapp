@@ -1,6 +1,6 @@
 const popup = document.querySelector('.popup');
 
-export default function popupGenerator(img, title, description, username = 'N/A', comment = 'N/A', dateOfCreation = 'N/A', noOfComments = 0) {
+export default function popupGenerator(img, title, description, allComments) {
   popup.innerHTML = `
   <div class="modal" id="modal">
   <div class="modal-content">
@@ -12,9 +12,7 @@ export default function popupGenerator(img, title, description, username = 'N/A'
     <div class="article-content">
       <h3 class="article-sub-title">${description}</h3>
       <div class="comments-container">
-        <h2 class="comment-heading">Comments (${noOfComments})</h2>
-        <!-- comments -->
-        <h3>${username} : ${comment} (${dateOfCreation})</h3>
+
       </div>
       <div class="formDiv">
         <form id="add-comment">
@@ -34,6 +32,20 @@ export default function popupGenerator(img, title, description, username = 'N/A'
   </div>
 </div>
   `;
+
+  const commentContainer = document.querySelector('.comments-container');
+  commentContainer.innerHTML = `
+  <h2 class="comment-heading">Comments (${allComments.length})</h2>
+  `;
+
+  if (allComments.length !== 0) {    
+    for (let i = allComments.length - 1; i >= 0; i -= 1) {
+      commentContainer.innerHTML += `
+      <h3>${allComments[i].username} : ${allComments[i].comment} (${allComments[i].creation_date})</h3>;
+      `;
+    }
+  }
+
   const closeButton = document.querySelector('.close');
   closeButton.addEventListener('click', () => {
     popup.innerHTML = '';
