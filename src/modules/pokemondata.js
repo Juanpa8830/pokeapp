@@ -17,11 +17,12 @@ class PokemonData {
     }
 
     getmultiplePokemon = async (minpokeId, maxpokeId) => {
-      const pokelist =[];
-      for (let i = minpokeId; i<=maxpokeId; i += 1) {
-        pokelist.push(this.getPokemonData(i))
+      const pokelist = [];
+      for (let i = minpokeId; i <= maxpokeId; i += 1) {
+        pokelist.push(this.getPokemonData(i));
       }
-      return (await Promise.all(pokelist));
+      const finalPokeList = await Promise.all(pokelist);
+      return finalPokeList;
     }
 }
 
