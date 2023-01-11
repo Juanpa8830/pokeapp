@@ -11,8 +11,7 @@ body {
   background: url(./images/background-poke.PNG);
   background-size: cover;
 
-  /* background-repeat: repeat-y; */
-  background-attachment: fixed;
+    background-attachment: fixed;
   backdrop-filter: blur(1px);
   -webkit-backdrop-filter: blur(1px);
   height: 100vh;
@@ -68,7 +67,7 @@ header {
   margin: 2% 2% 20% 10%;
 }
 
-#pokecard {
+.pokecard {
   display: flex;
   flex-direction: column;
   background: url(./images/card.png);
