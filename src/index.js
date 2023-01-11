@@ -11,8 +11,8 @@ const cardList = document.getElementById('pokeList');
 cardList.addEventListener('click', async (e) => {
   if (e.target.classList.contains('likes')) {
     await InvolvementAPI.postLike(e.target.id);
+    const nLikes = await likeCounter(e.target.id);
+    const showLike = document.getElementById(e.target.id);
+    showLike.innerHTML = `Likes (${nLikes})`;
   }
-  const nLikes = await likeCounter(e.target.id);
-  const showLike = document.getElementById(e.target.id);
-  showLike.innerHTML = `Likes (${nLikes})`;
 });
