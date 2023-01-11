@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
 * {
 	margin: 0;
 	padding: 0;
@@ -5,17 +7,21 @@
 }
 
 body {
-	font-family: 'Montserrat', sans-serif;
-	background: #e0e0e0;
-	color: #1d1d1d;
-}
-
+	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        background: url(./images/background-poke.PNG);
+        background-size:cover;
+        background-repeat:repeat-y;
+        backdrop-filter: blur(1px);
+        -webkit-backdrop-filter: blur(1px);
+        height: 100vh;
+    }
+      
 header {
+    
     display: flex;  
-    border: 2px solid blue;
     height: 100px;
     border: 2px solid rgb(20, 5, 80);
-    background-color: rgb(193, 185, 229);
+    background-color: rgb(146, 176, 191);
 }
 
 .pokelogo {
@@ -25,6 +31,7 @@ header {
 }
 
 .menu {
+    
     display: flex;
     padding-top: 3%;
     list-style:none;
@@ -35,17 +42,18 @@ header {
 }
 
 .menu li {
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 20px;
 }
 .menu li:hover {
-    text-decoration: underline;
+    text-decoration: 4px solid underline;
 }
 
 #pokeList {
 	display: grid; 
   grid-template-columns: 1fr 1fr 1fr 1fr; 
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr; 
-  gap: 4% 2%; 
+  gap: 2% 2%; 
   grid-template-areas: 
     ". . . ."
     ". . . ."
@@ -57,14 +65,26 @@ header {
   align-items: stretch; 
   width: 80%; 
   height: 74%; 
-  margin: 5% 5% 27% 15%;
-
+  margin: 2% 2% 20% 10%;
+  
 }
 
 #pokecard {
     display: flex;
     flex-direction: column;
-}
+    background: url(./images/card.png);
+    background-size:contain;
+    background-repeat: no-repeat;
+    background-position-x: 11%;
+    margin-top: 25%;
+    padding-left: 20%;
+    padding-top: 4%;
+    padding-bottom: 5%;
+    font-weight: 700;
+    font-size: 22px;
+          
+ }
+
 
 #image { 
     width: 200px;
@@ -72,28 +92,53 @@ header {
 }
 
 .likes { 
-    width: 200px;
-    height: 30px;
+    width: 150px;
+    height: 27px;
+    font-size: 15px;
+    background-image: url(./images/icons8-facebook-like-30.png);
+    background-repeat: no-repeat;
+    background-position-x: 20%;
+    background-position-y: center;
+    border: none;
+    margin-top: 2%;
+    padding-left:10%
+
+}
+
+.likes:hover,
+.comments:hover,
+.reserve:hover { 
+    border: 2px solid #1d1d1d;
+}
+
+.likes:active,
+.comments:active,
+.reserve:active { 
+    border: 4px solid #a6b0c5;
 }
 
 .comments {
     margin-top: 2%;
-    width: 200px;
-    height: 30px;
+    width: 150px;
+    height: 27px;
+    border: none;
 }
 
 .reserve { 
-    width: 200px;
-    height: 30px;
+    width: 150px;
+    height: 27px;
     margin-top: 2%;
+    border: none;
 }
 
 .footer {
     border: 2px solid gray;
     height:  100px;
-    margin-top: 5%;
+    margin-top: 140%;
     border: 2px solid rgb(20, 5, 80);
-    background-color: rgb(193, 185, 229);
+    background-color: rgb(146, 176, 191);
+    font-family: 'Press Start 2P', cursive;
+    font-size: 20px;
     
 }
 
