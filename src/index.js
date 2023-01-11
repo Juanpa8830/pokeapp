@@ -2,7 +2,9 @@ import './style.css';
 import start from './modules/start.js';
 import InvolvementAPI from './modules/involvementAPI.js';
 
-start();
+window.addEventListener('DOMContentLoaded', () => {
+  start();
+})
 
 const cardList = document.getElementById('pokeList');
 cardList.addEventListener('click', (e) => {
