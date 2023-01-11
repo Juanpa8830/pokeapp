@@ -1,4 +1,4 @@
-import InvolvementAPI from './involvementAPI';
+import InvolvementAPI from './involvementAPI.js';
 
 export default async function likeCounter(id) {
   const allLikes = await InvolvementAPI.getLikes();
@@ -8,4 +8,9 @@ export default async function likeCounter(id) {
     }
   }
   return 0;
+}
+
+export async function getAllLikes() {
+  const allLikes = await InvolvementAPI.getLikes();
+  return allLikes;
 }

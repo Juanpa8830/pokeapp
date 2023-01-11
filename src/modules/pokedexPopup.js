@@ -7,7 +7,7 @@ import pokemonData from './pokemondata.js';
 
 const popup = document.querySelector('.popup');
 
-const url = 'https://pokeapi.co/api/v2/ability/'
+const url = 'https://pokeapi.co/api/v2/ability/';
 
 export default async function pokedexPopup(id) {
   const api = new pokemonData();

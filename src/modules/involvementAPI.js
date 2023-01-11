@@ -14,8 +14,8 @@ export default class InvolvementAPI {
     try {
       const params = {
         item_id: itemId,
-        username: username,
-        comment: comment,
+        username,
+        comment,
       };
       const response = await fetch(`${url}comments`, {
         method: 'POST',
@@ -31,8 +31,8 @@ export default class InvolvementAPI {
   };
 
   static getLikes = async () => {
-    const responseponse = await fetch(`${url}likes`);
-    const data = await responseponse.json();
+    const response = await fetch(`${url}likes`);
+    const data = await response.json();
     return data;
   };
 

@@ -37,5 +37,5 @@ export default function popupGenerator(img, title, description, username = 'N/A'
   const closeButton = document.querySelector('.close');
   closeButton.addEventListener('click', () => {
     popup.innerHTML = '';
-  })
+  });
 }
