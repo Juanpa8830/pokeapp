@@ -10,8 +10,6 @@ body {
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   background: url(./images/background-poke.PNG);
   background-size: cover;
-
-  /* background-repeat: repeat-y; */
   background-attachment: fixed;
   backdrop-filter: blur(1px);
   -webkit-backdrop-filter: blur(1px);
@@ -65,10 +63,10 @@ header {
   align-items: stretch;
   width: 80%;
   height: 74%;
-  margin: 2% 2% 20% 10%;
+  margin: 2% 2% 10% 10%;
 }
 
-#pokecard {
+.pokecard {
   display: flex;
   flex-direction: column;
   background: url(./images/card.png);
@@ -129,7 +127,7 @@ header {
 
 .footer {
   height: 100px;
-  margin-top: 140%;
+  margin-top: 115%;
   border: 2px solid rgb(20, 5, 80);
   background-color: rgb(146, 176, 191);
   font-family: 'Press Start 2P', cursive;
@@ -144,28 +142,124 @@ header {
 
 .modal {
   position: fixed;
-  z-index: 1;
   justify-content: center;
   left: 0;
   bottom: 0;
   top: 0;
-  width: 100%;
-  height: auto;
-  padding-top: 50px;
-  padding-bottom: 50px;
-  overflow-y: scroll;
-  background-color: rgb(0, 0, 0);
-  background-color: rgba(0, 0, 0, 0.4);
+  width: 50%;
+  height: 170%;
+  margin-top: 20%;
+  margin-left: 25%;
+  background-image: url(./images/popupcoment.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  border: none;
 }
 
+.work-title-preview {
+  font-family: 'Press Start 2P', cursive;
+  color: rgb(4, 47, 238);
+  font-size: 30px;
+  padding-top: 8%;
+  padding-left: 35%
+
+}
+.article-img {
+  width: 500px;
+  height: 380px;
+  margin-top: 8%;
+  padding-left: 25%;
+}
+
+.article-sub-title {
+  margin-top: 5%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  font-family: 'Press Start 2P', cursive;
+  font-weight: 200;
+  color: rgb(47, 19, 40);
+  height: 150px;
+  overflow-y:scroll;
+  border: 2px solid rgb(173, 177, 146);
+  background-color: rgba(94, 214, 128, 0.4);
+}
+
+.comments-container {
+  margin-top: 6%;
+color: rgb(48, 4, 1);
+font-family:'Press Start 2P', cursive;
+font-size: 12px;
+overflow-y:scroll;
+height: 150px;
+  border: 2px solid rgb(173, 177, 146);
+  background-color: rgba(94, 214, 128, 0.4);
+
+}
+
+#add-comment {
+  margin-top: 9%;
+  margin-left: 23%;
+  margin-right: 27%;
+  margin-bottom: 10%;
+  font-family:'Press Start 2P', cursive;
+  font-size: 16px;
+  font-weight: 900;
+  color: rgb(5, 16, 236);
+  margin-bottom: 5%;
+  text-decoration: overline;
+ }
+
+.username {
+  background-color: rgba(205, 17, 64, 0.6);
+  margin-left: 25%;
+  width: 200px;
+  height: 25px;
+  margin-top:5%;
+  margin-bottom: 2%;
+  font-family:'Press Start 2P', cursive;
+}
+
+.comment-text {
+  background-color: rgba(205, 17, 64, 0.6);
+  margin-left: 18%;
+  margin-right: 30%;
+  margin-top:2%;
+  margin-bottom: 2%;
+  width:245px;
+  height: 130px;
+  font-family:'Press Start 2P', cursive;
+}
+
+#comment-btn {
+ 
+    width: 130px;
+    margin-left: 31%;
+    font-size: 16px;
+    font-family: 'Press Start 2P', cursive;
+    height: 27px;
+    border-radius: 5px;
+    background-color: rgba(145, 199, 240, 0.5);
+  }
+  
+  #comment-btn:hover {
+    border: 3px solid black;
+    background-color: darkkhaki;
+  }
+  
+  #comment-btn:active {
+    border: 5px solid rgb(41, 66, 208);
+    background-color: darkkhaki;
+  }
+
+
 .modal-content {
-  background-color: #fefefe;
-  margin: auto;
-  border: 1px solid #888;
-  width: 80%;
+  
+  width: 95%;
   border-radius: 1rem;
   display: flex;
   flex-direction: column;
+  margin-left: 2%;
+  
 }
 
 .card-preview-header {
@@ -176,14 +270,14 @@ header {
 }
 
 .close {
-  color: #aaa;
+  color: rgb(53, 47, 47);
   font-size: 28px;
   font-weight: bold;
 }
 
 .close:hover,
 .close:focus {
-  color: #000;
+  color: rgb(246, 244, 253);
   text-decoration: none;
   cursor: pointer;
 }

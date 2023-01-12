@@ -16,7 +16,7 @@ export default function popupGenerator(img, title, description, allComments) {
       </div>
       <div class="formDiv">
         <form id="add-comment">
-          <h2>Add Comment</h2>
+          <h2>Add Comments!!!</h2>
           <label for="">Your name</label>
           <div>
             <input type="text" name="name" class="username" required>
@@ -38,7 +38,7 @@ export default function popupGenerator(img, title, description, allComments) {
   <h2 class="comment-heading">Comments (${allComments.length})</h2>
   `;
 
-  if (allComments.length !== 0) {    
+  if (allComments.length !== 0) {
     for (let i = allComments.length - 1; i >= 0; i -= 1) {
       commentContainer.innerHTML += `
       <h3>${allComments[i].username} : ${allComments[i].comment} (${allComments[i].creation_date})</h3>;

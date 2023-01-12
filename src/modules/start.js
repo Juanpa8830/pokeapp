@@ -2,8 +2,9 @@ import PokemonData from './pokemondata.js';
 import pokedexPopup from './pokedexPopup.js';
 import { getAllLikes } from './likeCounter.js';
 import InvolvementAPI from './involvementAPI.js';
+import AllPokesCounter from './pokemonCounter.js';
 
-var count = 0;
+let count = 0;
 
 let allLikes = [];
 async function readAllLikes() {
@@ -21,14 +22,14 @@ export function scanLikes(id) {
 export default async function start() {
   await readAllLikes();
   const Api = new PokemonData();
-  const pokemons = await Api.getmultiplePokemon(1, 24);
+  const pokemons = await Api.getmultiplePokemon(1, 20);
   const pokeList = document.getElementById('pokeList');
   pokemons.forEach((pokemon) => {
     const likeID = `like${pokemon.id}`;
     const commentID = pokemon.id;
     const reserveID = `reserve${pokemon.id}`;
     pokeList.innerHTML += `
-        <div id="pokecard">
+        <div class="pokecard">
         <p id="id">${pokemon.id}</p>
         <p id="name">${pokemon.name}</p>
         <img id="image" src="${pokemon.image}" alt="">
@@ -42,7 +43,7 @@ export default async function start() {
   const allCommentButtons = document.querySelectorAll('.comments');
   allCommentButtons.forEach((element) => {
     element.addEventListener('click', async () => {
-      const id = element.id;
+      const { id } = element;
       await pokedexPopup(id);
       const commentContainer = document.querySelector('.comments-container');
       const username = document.querySelector('.username');
@@ -70,7 +71,9 @@ export default async function start() {
         comment.value = '';
         commentContainer.appendChild(commentOnDom);
         heading.innerHTML = `Comments (${count})`;
-      });
+       });
     });
   });
+
+ AllPokesCounter();
 }

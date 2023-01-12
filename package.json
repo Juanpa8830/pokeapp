@@ -21,6 +21,7 @@
   "homepage": "https://github.com/Juanpa8830/pokeapp#readme",
   "devDependencies": {
     "@babel/plugin-transform-modules-commonjs": "^7.19.6",
+    "@babel/preset-env": "^7.20.2",
     "babel": "^6.23.0",
     "babel-eslint": "^10.1.0",
     "css-loader": "^6.7.3",
