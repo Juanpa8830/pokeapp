@@ -16,7 +16,7 @@ export default function popupGenerator(img, title, description, allComments) {
       </div>
       <div class="formDiv">
         <form id="add-comment">
-          <h2>Add Comment</h2>
+          <h2>Add Comments!!!</h2>
           <label for="">Your name</label>
           <div>
             <input type="text" name="name" class="username" required>
