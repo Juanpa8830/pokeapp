@@ -3,8 +3,7 @@ import pokedexPopup from './pokedexPopup.js';
 import { getAllLikes } from './likeCounter.js';
 import InvolvementAPI from './involvementAPI.js';
 import AllPokesCounter from './pokemonCounter.js';
-
-let count = 0;
+import commentCounterDOM from './commentCounterDOM.js';
 
 let allLikes = [];
 async function readAllLikes() {
@@ -50,6 +49,7 @@ export default async function start() {
       const comment = document.querySelector('.comment-text');
       const form = document.querySelector('form');
       const heading = document.querySelector('.comment-heading');
+      let count = commentCounterDOM();
       form.addEventListener('submit', async (event) => {
         event.preventDefault();
         const data = await InvolvementAPI.postComment(id, username.value, comment.value);
@@ -71,9 +71,9 @@ export default async function start() {
         comment.value = '';
         commentContainer.appendChild(commentOnDom);
         heading.innerHTML = `Comments (${count})`;
-       });
+      });
     });
   });
 
- AllPokesCounter();
+  AllPokesCounter();
 }
