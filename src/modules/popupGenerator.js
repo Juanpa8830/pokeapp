@@ -41,7 +41,7 @@ export default function popupGenerator(img, title, description, allComments) {
   if (allComments.length !== 0) {
     for (let i = allComments.length - 1; i >= 0; i -= 1) {
       commentContainer.innerHTML += `
-      <h3>${allComments[i].username} : ${allComments[i].comment} (${allComments[i].creation_date})</h3>;
+      <h3 class="user-comments">${allComments[i].username} : ${allComments[i].comment} (${allComments[i].creation_date})</h3>
       `;
     }
   }
