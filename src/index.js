@@ -3,7 +3,6 @@ import start from './modules/start.js';
 import InvolvementAPI from './modules/involvementAPI.js';
 import likeCounter from './modules/likeCounter.js';
 
-
 window.addEventListener('DOMContentLoaded', () => {
   start();
 });
@@ -17,6 +16,3 @@ cardList.addEventListener('click', async (e) => {
     showLike.innerHTML = `Likes (${nLikes})`;
   }
 });
-
-
-
