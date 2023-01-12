@@ -10,8 +10,7 @@ body {
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   background: url(./images/background-poke.PNG);
   background-size: cover;
-
-    background-attachment: fixed;
+  background-attachment: fixed;
   backdrop-filter: blur(1px);
   -webkit-backdrop-filter: blur(1px);
   height: 100vh;
@@ -64,7 +63,7 @@ header {
   align-items: stretch;
   width: 80%;
   height: 74%;
-  margin: 2% 2% 20% 10%;
+  margin: 2% 2% 10% 10%;
 }
 
 .pokecard {
@@ -128,7 +127,7 @@ header {
 
 .footer {
   height: 100px;
-  margin-top: 140%;
+  margin-top: 115%;
   border: 2px solid rgb(20, 5, 80);
   background-color: rgb(146, 176, 191);
   font-family: 'Press Start 2P', cursive;
@@ -148,17 +147,58 @@ header {
   left: 0;
   bottom: 0;
   top: 0;
-  width: 100%;
-  height: auto;
-  padding-top: 50px;
-  padding-bottom: 50px;
-  overflow-y: scroll;
-  background-color: rgb(0, 0, 0);
-  background-color: rgba(0, 0, 0, 0.4);
+  width: 50%;
+  height: 160%;
+  margin-top: 20%;
+  margin-left: 20%;
+  background-image: url(./images/popupcoment.png);
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
+.work-title-preview {
+  font-family: 'Press Start 2P', cursive;
+  color: rgb(50, 99, 124);
+  font-size: 25px;
+  padding-top: 10%;
+  padding-left: 37%
+
+}
+.article-img {
+  width: 500px;
+  height: 350px;
+  margin-top: 10%;
+  padding-left: 20%;
+}
+
+.article-sub-title {
+  margin-top: 10%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  font-family: 'Press Start 2P', cursive;
+  font-weight: 200;
+  color: rgb(47, 19, 40);
+  height: 150px;
+  overflow-y:scroll;
+  border: 2px solid rgb(173, 177, 146);
+  background-color: rgba(94, 214, 128, 0.6);
+}
+
+.comments-container {
+  margin-top: 10%;
+color: rgb(47, 19, 40);
+font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+font-size: 12px;
+border: 2px solid rgb(173, 177, 146);
+background-color: rgba(94, 214, 128, 0.4);
+
+}
+
+.formDiv {
+  margin-top: 10%;
+}
 .modal-content {
-  background-color: #fefefe;
+  
   margin: auto;
   border: 1px solid #888;
   width: 80%;

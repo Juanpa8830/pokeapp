@@ -22,7 +22,7 @@ export function scanLikes(id) {
 export default async function start() {
   await readAllLikes();
   const Api = new PokemonData();
-  const pokemons = await Api.getmultiplePokemon(1, 24);
+  const pokemons = await Api.getmultiplePokemon(1, 20);
   const pokeList = document.getElementById('pokeList');
   pokemons.forEach((pokemon) => {
     const likeID = `like${pokemon.id}`;
