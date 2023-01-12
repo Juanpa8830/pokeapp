@@ -15,7 +15,7 @@ test ('pokeCounter.innerText is equals to 15', () => {
     const pokeCont = document.getElementById('poke-cards-cont');
     let htmlCards = '';
 
-    for (let i = 0; i <= 20; i += 1) {
+    for (let i = 1; i <= 20; i += 1) {
       htmlCards += '<div class="pokecard"></div>';
     }
     pokeCont.innerHTML = htmlCards;
