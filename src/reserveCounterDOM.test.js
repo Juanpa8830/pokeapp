@@ -1,16 +1,16 @@
 /**
  * @jest-environment jsdom
  */
-​
+
 import reserveCounterDOM from './modules/reserveCounterDOM.js';
-​
+
 document.body.innerHTML = `
 <div class="reserve-container">
   <h2 class="reserve-heading">reserves</h2>
 </div>
 `;
 const reserveContainer = document.querySelector('.reserve-container');
-​
+
 describe('Test the reserve counter function:', () => {
   test('Adding first reserve', () => {
     const userreserves = document.createElement('h3');
@@ -20,7 +20,7 @@ describe('Test the reserve counter function:', () => {
     const noOfreserves = reserveCounterDOM();
     expect(noOfreserves).toBe(1);
   });
-​
+
   test('Adding second reserve', () => {
     const userreserves = document.createElement('h3');
     userreserves.classList.add('user-reserves');
@@ -29,7 +29,7 @@ describe('Test the reserve counter function:', () => {
     const noOfreserves = reserveCounterDOM();
     expect(noOfreserves).toBe(2);
   });
-​
+
   test('Adding third reserve', () => {
     const userreserves = document.createElement('h3');
     userreserves.classList.add('user-reserves');
@@ -38,7 +38,7 @@ describe('Test the reserve counter function:', () => {
     const noOfreserves = reserveCounterDOM();
     expect(noOfreserves).toBe(3);
   });
-​
+
   test('Adding fourth reserve', () => {
     const userreserves = document.createElement('h3');
     userreserves.classList.add('user-reserves');
