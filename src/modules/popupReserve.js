@@ -1,6 +1,12 @@
 const popup = document.querySelector('.popup');
 
 export default function popupReserve(img, title, description, allReserves) {
+  const currentDate = new Date();
+  const year = currentDate.getFullYear();
+  const month = currentDate.getMonth() + 1; // January is 0
+  const day = currentDate.getDate();
+
+  const dateString = `${year}-0${month}-${day}`;
   popup.innerHTML = `
   <div class="modal" id="modal">
   <div class="modal-content">
@@ -15,9 +21,9 @@ export default function popupReserve(img, title, description, allReserves) {
 
       </div>
       <form id="add-reserve">
-        <input placeholder="Your name" id="reserve-name" class="reserve-input">
-        <input placeholder="Start date" id="reserve-start" class="reserve-input">
-        <input placeholder="End date" id="reserve-end" class="reserve-input">
+        <input placeholder="Your name" id="reserve-name" class="reserve-input" required>
+        <input type="date" placeholder="Start date (YYYY-MM-DD)" id="reserve-start" class="reserve-input" min=${dateString} required>
+        <input type="date" placeholder="End date (YYYY-MM-DD)" id="reserve-end" class="reserve-input" min=${dateString} required>
         <button type="submit" id="reserve-btn">Reserve</button>
       </form>
       `;
