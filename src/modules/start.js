@@ -4,6 +4,9 @@ import { getAllLikes } from './likeCounter.js';
 import InvolvementAPI from './involvementAPI.js';
 import AllPokesCounter from './pokemonCounter.js';
 import commentCounterDOM from './commentCounterDOM.js';
+import reserveCounter from './reserveCounter.js';
+import reserveCounterDOM from './reserveCounterDOM.js';
+import pokedexReserve from './pokedexReserve.js';
 
 let allLikes = [];
 async function readAllLikes() {
@@ -26,7 +29,7 @@ export default async function start() {
   pokemons.forEach((pokemon) => {
     const likeID = `like${pokemon.id}`;
     const commentID = pokemon.id;
-    const reserveID = `reserve${pokemon.id}`;
+    const reserveID = `${pokemon.id}`;
     pokeList.innerHTML += `
         <div class="pokecard">
         <p id="id">${pokemon.id}</p>
@@ -74,6 +77,27 @@ export default async function start() {
       });
     });
   });
+
+  const allReservesButtons = document.querySelectorAll('.reserve');
+  allReservesButtons.forEach((e) => {
+    e.addEventListener('click', async () => {
+      const { id } = e;
+      await pokedexReserve(id);
+      const forms = document.getElementById('add-reserve');
+      const user = document.getElementById('reserve-name');
+      const dateStart = document.getElementById('reserve-start');
+      const dateEnd = document.getElementById('reserve-end');
+      let c = reserveCounterDOM();
+      forms.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const reserveData = await InvolvementAPI.postReserve(id, user.value, dateStart.value, dateEnd.value);
+        if (reserveData === 201) {
+          c += 1;
+        }
+        const reserveDOM = document.createElement('h3');
+      });
+    })
+  })
 
   AllPokesCounter();
 }

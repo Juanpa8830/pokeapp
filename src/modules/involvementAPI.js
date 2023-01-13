@@ -46,4 +46,27 @@ export default class InvolvementAPI {
     });
     return response.status;
   }
+
+  static getReserve = async (id) => {
+    const response = await fetch(`${url}reservations?item_id=${id}`);
+    const data = await response.json();
+    return data;
+  };
+
+  static postReserve = async (itemID, username, date_start, date_end) => {
+    const parameters = {
+      item_id: itemID,
+      username,
+      date_start,
+      date_end,
+    }
+    const response = await fetch(`${url}reservations`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(parameters)
+    });
+    return response.status;
+  };
 }
