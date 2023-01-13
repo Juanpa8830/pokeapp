@@ -1,4 +1,4 @@
-const url = 'http://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/rneS550dVMdEKWuisWBb/';
+const url = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/rneS550dVMdEKWuisWBb/';
 
 export default class InvolvementAPI {
   static getComments = async (itemId) => {
