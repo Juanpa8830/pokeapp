@@ -4,9 +4,9 @@
 
 import AllPokesCounter from './modules/pokemonCounter.js';
 
-test('pokeCounter.innerText is equals to 15', () => {
-  // Arrange - acomodar todo para probar
-  document.body.innerHTML = `
+test ('pokeCounter.textcontent is equals to pokedex(20)', () => {
+    // Arrange - acomodar todo para probar
+    document.body.innerHTML = `
         <div>
         <div id="poke-cards-cont"></div>
         <li id="pokedex">Pokedex</li>
