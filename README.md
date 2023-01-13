@@ -82,7 +82,7 @@ After you're finished please remove all the comments and instructions!
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-Have a look the live demo of the website [here](#).
+Have a look the live demo of the website [here](https://juanpa8830.github.io/pokeapp/dist/).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
