@@ -50,7 +50,10 @@ export default class InvolvementAPI {
   static getReserve = async (id) => {
     const response = await fetch(`${url}reservations?item_id=${id}`);
     const data = await response.json();
-    return data;
+    if (data.error === undefined) {
+      return data;
+    }
+    return data.error.status;
   };
 
   static postReserve = async (itemID, username, date_start, date_end) => {
