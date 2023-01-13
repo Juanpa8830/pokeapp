@@ -56,19 +56,19 @@ export default class InvolvementAPI {
     return data.error.status;
   };
 
-  static postReserve = async (itemID, username, date_start, date_end) => {
+  static postReserve = async (itemID, username, dateStart, dateEnd) => {
     const parameters = {
       item_id: itemID,
       username,
-      date_start,
-      date_end,
-    }
+      date_start: dateStart,
+      date_end: dateEnd,
+    };
     const response = await fetch(`${url}reservations`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify(parameters)
+      body: JSON.stringify(parameters),
     });
     return response.status;
   };

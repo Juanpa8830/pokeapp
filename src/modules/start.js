@@ -93,7 +93,7 @@ export default async function start() {
       forms.addEventListener('submit', async (e) => {
         e.preventDefault();
         if (dateStart.value <= dateEnd.value) {
-          const reserveData = await InvolvementAPI.postReserve(id, user.value, dateStart.value, dateEnd.value);
+          const reserveData = await InvolvementAPI.postReserve(id, user.value, dateStart.value, dateEnd.value); // eslint-disable-line max-len
           if (reserveData === 201) {
             c += 1;
           }
@@ -108,13 +108,13 @@ export default async function start() {
           reserveContainer.appendChild(reserveDOM);
           heading.innerHTML = `Reservations (${c})`;
         } else {
-          alert("Enter valid dates");
+          alert('Enter valid dates'); // eslint-disable-line no-alert
           dateStart.value = '';
           dateEnd.value = '';
         }
       });
-    })
-  })
+    });
+  });
 
   AllPokesCounter();
 }

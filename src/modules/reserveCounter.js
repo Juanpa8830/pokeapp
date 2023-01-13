@@ -1,4 +1,4 @@
-import InvolvementAPI from "./involvementAPI";
+import InvolvementAPI from './involvementAPI.js';
 
 export default async function reserveCounter(id) {
   const allReserves = await InvolvementAPI.getReserve(id);

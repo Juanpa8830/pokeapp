@@ -11,10 +11,10 @@ export default async function pokedexReserve(id) {
   const data = await getData(`${url}${id}`);
   const description = data.effect_entries[1].effect;
   const allReserves = await reserveCounter(id);
-  for(let i = 0; i < pokemons.length; i += 1) {
+  for (let i = 0; i < pokemons.length; i += 1) {
     if (pokemons[i].id === parseInt(id, 10)) {
       popupReserve(pokemons[i].image, pokemons[i].name, description, allReserves);
       break;
     }
-  }  
+  }
 }
