@@ -4,7 +4,6 @@ import { getAllLikes } from './likeCounter.js';
 import InvolvementAPI from './involvementAPI.js';
 import AllPokesCounter from './pokemonCounter.js';
 import commentCounterDOM from './commentCounterDOM.js';
-import reserveCounter from './reserveCounter.js';
 import reserveCounterDOM from './reserveCounterDOM.js';
 import pokedexReserve from './pokedexReserve.js';
 
@@ -67,6 +66,7 @@ export default async function start() {
         const dateString = `${year}-${month}-${day}`;
 
         const commentOnDom = document.createElement('h3');
+        commentOnDom.classList.add('user-comments');
         commentOnDom.innerHTML = `
         ${username.value} : ${comment.value} (${dateString})
         `;
@@ -83,18 +83,35 @@ export default async function start() {
     e.addEventListener('click', async () => {
       const { id } = e;
       await pokedexReserve(id);
+      const reserveContainer = document.querySelector('.reserve-container');
       const forms = document.getElementById('add-reserve');
       const user = document.getElementById('reserve-name');
       const dateStart = document.getElementById('reserve-start');
       const dateEnd = document.getElementById('reserve-end');
+      const heading = document.querySelector('.comment-heading');
       let c = reserveCounterDOM();
       forms.addEventListener('submit', async (e) => {
         e.preventDefault();
-        const reserveData = await InvolvementAPI.postReserve(id, user.value, dateStart.value, dateEnd.value);
-        if (reserveData === 201) {
-          c += 1;
+        if (dateStart.value <= dateEnd.value) {
+          const reserveData = await InvolvementAPI.postReserve(id, user.value, dateStart.value, dateEnd.value);
+          if (reserveData === 201) {
+            c += 1;
+          }
+          const reserveDOM = document.createElement('h3');
+          reserveDOM.classList.add('user-reserves');
+          reserveDOM.innerHTML = `
+          ${dateStart.value} - ${dateEnd.value} by ${user.value}
+          `;
+          user.value = '';
+          dateStart.value = '';
+          dateEnd.value = '';
+          reserveContainer.appendChild(reserveDOM);
+          heading.innerHTML = `Reservations (${c})`;
+        } else {
+          alert("Enter valid dates");
+          dateStart.value = '';
+          dateEnd.value = '';
         }
-        const reserveDOM = document.createElement('h3');
       });
     })
   })
