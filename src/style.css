@@ -1,3 +1,281 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-  color: red;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  background: url(./images/background-poke.PNG);
+  background-size: cover;
+  background-attachment: fixed;
+  backdrop-filter: blur(1px);
+  -webkit-backdrop-filter: blur(1px);
+  height: 100vh;
+}
+
+header {
+  display: flex;
+  height: 100px;
+  border: 2px solid rgb(20, 5, 80);
+  background-color: rgb(146, 176, 191);
+}
+
+.pokelogo {
+  height: 80px;
+  margin-top: 0.5%;
+  margin-left: 5%;
+}
+
+li:hover {
+  cursor: pointer;
+}
+
+.menu {
+  display: flex;
+  list-style: none;
+  padding-top: 2.5%;
+  font-size: 25px;
+  margin-left: 5%;
+  gap: 90px;
+}
+
+.menu li {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 20px;
+}
+
+.menu li:hover {
+  text-decoration: 4px solid underline;
+}
+
+#pokeList {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+  gap: 2% 2%;
+  grid-template-areas:
+    ". . . ."
+    ". . . ."
+    ". . . ."
+    ". . . ."
+    ". . . ."
+    ". . . .";
+  justify-items: stretch;
+  align-items: stretch;
+  width: 80%;
+  height: 74%;
+  margin: 2% 2% 10% 10%;
+}
+
+.pokecard {
+  display: flex;
+  flex-direction: column;
+  background: url(./images/card.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position-x: 11%;
+  margin-top: 25%;
+  padding-left: 20%;
+  padding-top: 4%;
+  padding-bottom: 5%;
+  font-weight: 700;
+  font-size: 22px;
+}
+
+#image {
+  width: 200px;
+  height: 150px;
+}
+
+.likes {
+  width: 150px;
+  height: 27px;
+  font-size: 15px;
+  background-image: url(./images/icons8-facebook-like-30.png);
+  background-repeat: no-repeat;
+  background-position-x: 20%;
+  background-position-y: center;
+  border: none;
+  margin-top: 2%;
+  padding-left: 10%;
+}
+
+.comments {
+  margin-top: 2%;
+  width: 150px;
+  height: 27px;
+  border: none;
+}
+
+.reserve {
+  width: 150px;
+  height: 27px;
+  margin-top: 2%;
+  border: none;
+}
+
+.likes:hover,
+.comments:hover,
+.reserve:hover {
+  border: 2px solid #1d1d1d;
+}
+
+.likes:active,
+.comments:active,
+.reserve:active {
+  border: 4px solid #a6b0c5;
+}
+
+.footer {
+  height: 100px;
+  margin-top: 115%;
+  border: 2px solid rgb(20, 5, 80);
+  background-color: rgb(146, 176, 191);
+  font-family: 'Press Start 2P', cursive;
+  font-size: 20px;
+}
+
+.footer p {
+  padding-top: 2.5%;
+  font-size: 25px;
+  margin-left: 5%;
+}
+
+.modal {
+  position: fixed;
+  justify-content: center;
+  left: 0;
+  bottom: 0;
+  top: 0;
+  width: 50%;
+  height: 170%;
+  margin-top: 20%;
+  margin-left: 25%;
+  background-image: url(./images/popupcoment.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  border: none;
+}
+
+.work-title-preview {
+  font-family: 'Press Start 2P', cursive;
+  color: rgb(4, 47, 238);
+  font-size: 30px;
+  padding-top: 8%;
+  padding-left: 35%;
+}
+
+.article-img {
+  width: 500px;
+  height: 380px;
+  margin-top: 8%;
+  padding-left: 25%;
+}
+
+.article-sub-title {
+  margin-top: 5%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  font-family: 'Press Start 2P', cursive;
+  font-weight: 200;
+  color: rgb(47, 19, 40);
+  height: 150px;
+  overflow-y: scroll;
+  border: 2px solid rgb(173, 177, 146);
+  background-color: rgba(94, 214, 128, 0.4);
+}
+
+.comments-container {
+  margin-top: 6%;
+  color: rgb(48, 4, 1);
+  font-family: 'Press Start 2P', cursive;
+  font-size: 12px;
+  overflow-y: scroll;
+  height: 150px;
+  border: 2px solid rgb(173, 177, 146);
+  background-color: rgba(94, 214, 128, 0.4);
+}
+
+#add-comment {
+  margin-top: 9%;
+  margin-left: 23%;
+  margin-right: 27%;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 16px;
+  font-weight: 900;
+  color: rgb(5, 16, 236);
+  margin-bottom: 5%;
+  text-decoration: overline;
+}
+
+.username {
+  background-color: rgba(205, 17, 64, 0.6);
+  margin-left: 25%;
+  width: 200px;
+  height: 25px;
+  margin-top: 5%;
+  margin-bottom: 2%;
+  font-family: 'Press Start 2P', cursive;
+}
+
+.comment-text {
+  background-color: rgba(205, 17, 64, 0.6);
+  margin-left: 18%;
+  margin-right: 30%;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  width: 245px;
+  height: 130px;
+  font-family: 'Press Start 2P', cursive;
+}
+
+#comment-btn {
+  width: 130px;
+  margin-left: 31%;
+  font-size: 16px;
+  font-family: 'Press Start 2P', cursive;
+  height: 27px;
+  border-radius: 5px;
+  background-color: rgba(145, 199, 240, 0.5);
+}
+
+#comment-btn:hover {
+  border: 3px solid black;
+  background-color: darkkhaki;
+}
+
+#comment-btn:active {
+  border: 5px solid rgb(41, 66, 208);
+  background-color: darkkhaki;
+}
+
+.modal-content {
+  width: 95%;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  margin-left: 2%;
+}
+
+.card-preview-header {
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.close {
+  color: rgb(53, 47, 47);
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: rgb(246, 244, 253);
+  text-decoration: none;
+  cursor: pointer;
 }
